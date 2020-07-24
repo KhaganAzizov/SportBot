@@ -33,6 +33,12 @@ public class MathcesTaker extends Thread {
             ChromeOptions options = new ChromeOptions();
             options.setHeadless(true);
             options.setBinary(binpath);
+            options.addArguments("start-maximized"); // open Browser in maximized mode
+            options.addArguments("disable-infobars"); // disabling infobars
+            options.addArguments("--disable-extensions"); // disabling extensions
+            options.addArguments("--disable-gpu"); // applicable to windows os only
+            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+            options.addArguments("--no-sandbox"); // Bypass OS security model
             WebDriver driver = new ChromeDriver(options);
             driver.get("https://www.livescore.com/soccer/2020-07-24/");
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
