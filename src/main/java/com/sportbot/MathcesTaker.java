@@ -1,5 +1,6 @@
 package com.sportbot;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MathcesTaker extends Thread {
     public static StringBuilder matches;
-    static Thread t=new Thread();
     String binpath=System.getenv("GOOGLE_CHROME_BIN");
     String chromedriverpath=System.getenv("CHROMEDRIVER_PATH");
     static Object lock=new Object();
@@ -28,6 +28,7 @@ public class MathcesTaker extends Thread {
         synchronized (MathcesTaker.lock) {
             matches = new StringBuilder();
             System.out.println(binpath);
+            WebDriverManager.chromedriver().setup();
             System.out.println(chromedriverpath);
             System.setProperty("webdriver.chrome.driver", chromedriverpath);
             ChromeOptions options = new ChromeOptions();
