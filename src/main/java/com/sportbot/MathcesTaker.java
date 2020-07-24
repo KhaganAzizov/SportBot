@@ -22,6 +22,7 @@ public class MathcesTaker extends Thread {
     String binpath=System.getenv("GOOGLE_CHROME_BIN");
     String chromedriverpath=System.getenv("CHROMEDRIVER_PATH");
     static Object lock=new Object();
+    //Test
     @Override
     public void run() {
         synchronized (MathcesTaker.lock) {
