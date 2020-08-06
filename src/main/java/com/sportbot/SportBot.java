@@ -8,7 +8,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class SportBot extends TelegramLongPollingBot {
     private final String BotUsername="adwsportt_bot";
-    private final String BotToken="1270757084:AAEszNCp7-WIBOVO555CDEu4LYxXiTeqJnI";
+    private final String BotToken="";
     SendMessage sendMessage;
     Message message;
     static Object not=new Object();
